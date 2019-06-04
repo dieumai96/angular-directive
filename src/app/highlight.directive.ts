@@ -9,7 +9,7 @@ export class HighlightDirective implements OnInit {
   @Input() highlightColor: string;
   @HostListener('mouseenter') onMouseEnter() {
 
-    this.highlight('yellow');
+    this.highlight(this.highlightColor || 'red');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
@@ -24,7 +24,7 @@ export class HighlightDirective implements OnInit {
 
 
   private highlight(color: string) {
-    this.el.nativeElement.style.transition = '0.5s';
+    // this.el.nativeElement.style.transition = '0.5s';
     this.el.nativeElement.style.backgroundColor = color;
   }
 }

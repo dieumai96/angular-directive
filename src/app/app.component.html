@@ -1,4 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<p appHighlight [highlightColor]="'blue'">Highlight me!</p>
-
+<p appHighlight [highlightColor]="color">Highlight me!</p>
+<input type="radio" (click) = "color = 'blue'">
+<input type="radio" (click) = "color = 'purple'">
+<input type="radio" (click) = "color = 'yellow'">
+{{color}}
 <router-outlet></router-outlet>
