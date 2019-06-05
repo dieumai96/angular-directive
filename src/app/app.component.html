@@ -1,7 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <p appHighlight [highlightColor]="color">Highlight me!</p>
-<input type="radio" (click) = "color = 'blue'">
-<input type="radio" (click) = "color = 'purple'">
-<input type="radio" (click) = "color = 'yellow'">
+<span appFontFamily>Cai dinh cong manh nha may</span>
+<input type="radio" (click)="color = 'blue'">
+<input type="radio" (click)="color = 'purple'">
+<input type="radio" (click)="color = 'yellow'">
 {{color}}
+<input type="text" [(ngModel)] = "dataToFuckComponent" name="" id="">
+<app-fuck [data] = "dataToFuckComponent"></app-fuck>
+<div style="position: relative;">
+    <input type="text" name="name" class="input-form" appFocusInput [inputText]="searchTen" [(ngModel)]="searchTen"
+        autocomplete="off">
+    <label>Tim kiem</label>
+</div>
+<input type="text" [(ngModel)]="searchTitle" name="" id="">
 <router-outlet></router-outlet>
+
+
+<!-- [ngStyle]="searchTen ? {'top' : '4px' , 'font-size' : '12px'} : {'top' : '20px'}" -->
