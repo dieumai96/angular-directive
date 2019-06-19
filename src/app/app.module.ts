@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AppService } from './service/app-service.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { CustomComponent } from './custom/custom.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { AboutComponent } from './about/about.component';
     CreaditCardDirective,
     HomeComponent,
     AboutComponent,
+    CustomComponent,
   ],
   imports: [
     BrowserModule,

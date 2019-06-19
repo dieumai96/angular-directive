@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    // this.getData();
+    this.getData();
     this.nextStreamWhenFirstStreamError();
   }
   getData() {
@@ -44,6 +44,7 @@ export class AboutComponent implements OnInit, OnDestroy {
         const { id } = value;
         let url = id === 5 ? `${this.baseUrl}/${id}5` : `${this.baseUrl}/${id}`
         return this.http.get(url).pipe(
+          takeUntil(this.clearSub),
           delay(value.delay),
           catchError(err => {
             return of(null);
@@ -73,7 +74,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   }
 
   nextStreamWhenFirstStreamError() {
-    let url1 = `${this.baseUrl}/1`;
+    let url1 = `${this.baseUrl}/133`;
     let url2 = `${this.baseUrl}/2`;
     this.http.get(url1).pipe(
       takeUntil(this.clearSub),
