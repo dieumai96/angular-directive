@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable, of, pipe } from 'rxjs';
 import { AppService } from '../service/app-service.service';
-import { withLatestFrom, map, takeUntil } from 'rxjs/operators';
+import { withLatestFrom, map, takeUntil, pairwise, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-custom',
@@ -20,8 +20,12 @@ export class CustomComponent implements OnInit, OnDestroy {
   ) {
     this.isLoading = true;
   }
-
+  array$ = of([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   ngOnInit() {
+    this.array$.pipe(
+      pairwise(),
+      take(5),
+    ).subscribe(_ => console.log(_));
     this.appService.getBuildingInfo().pipe(
       withLatestFrom(this.appService.getEmploye(), this.appService.getUser()),
       pipe(takeUntil(this.clearSub)),
