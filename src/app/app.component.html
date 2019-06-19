@@ -1,4 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <p appHighlight [highlightColor]="'blue'">Highlight me!</p>
+<input type="text" placeholder="Type input" class="form-control" credit-card>
+<!-- <ul>
+    <li *ngFor="let item of user ; index as i">
+        {{ i }} {{item.name}}
+    </li>
+    <ng-template ngFor [ngForOf]="user" let-item let-i="index">
+        <li>{{i}} {{item.name}}</li>
+    </ng-template>
+</ul>
+
+<ul>
+    <ng-template ngFor [ngForOf] = "mapped" let-item let-i = "index">
+        <li>{{item.filesize}}</li>
+    </ng-template>
+    
+</ul> -->
+<div class="row">
+    <!-- <div class="col-md-6">
+        <input type="text" class="form-control" autofocus #searchInput>
+    </div> -->
+    <div class="col-md-6">
+        <input type="text" class="form-control" autofocus #searchFake>
+    </div>
+</div>
+{{listRealData | json}}
+<a routerLink="/home">Go Home</a>
+<a routerLink="/about">Go About</a>
+
+
 
 <router-outlet></router-outlet>

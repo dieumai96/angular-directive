@@ -4,9 +4,11 @@ import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/cor
   selector: '[appHighlight]'
 })
 export class HighlightDirective implements OnInit {
+
   constructor(private el: ElementRef) {
   }
   @Input() highlightColor: string;
+  
   @HostListener('mouseenter') onMouseEnter() {
 
     this.highlight('yellow');

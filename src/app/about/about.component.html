@@ -1,0 +1,13 @@
+<ul>
+  <ng-template ngFor [ngForOf]="array" let-value let-i="index">
+    <li>
+      <button [disabled]="!jobFinishedMap[value.id]">
+        {{ jobFinishedMap[value.id] ? 'Done' :!jobFinishedMap[value.id] && isFinish 
+          ? 'Error Loaded'
+          : 'Loading...'}}
+      </button>
+      {{userMap[value.id]}}</li>
+  </ng-template>
+
+</ul>
+<p *ngIf="isFinish">All Done</p>
